@@ -7,6 +7,7 @@ double dt, last_time;
 double integral, previous, output = 0;
 double kp, ki, kd;
 double setpoint = 75.00;
+double pid(double error);
 
 void setup() {
   kp = 0.8;
@@ -44,7 +45,7 @@ void loop() {
   // Error
   Serial.println(error);
 
-  delay(300);
+  delay(500);
 }
 
 double pid(double error)
