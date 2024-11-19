@@ -43,7 +43,7 @@ void loop() {
   Serial.println(actual);
 
   // Error
-  Serial.println(error);
+  //Serial.println(error);
 
   delay(500);
 }

@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 const int INPUT_PIN = A0;
 const int OUTPUT_PIN = DD3;
 
@@ -5,9 +7,9 @@ double dt, last_time;
 double integral, previous, output = 0;
 double kp, ki, kd;
 double setpoint = 75.00;
+double pid(double error);
 
-void setup()
-{
+void setup() {
   kp = 0.8;
   ki = 0.20;
   kd = 0.001;
@@ -24,8 +26,7 @@ void setup()
   delay(100);
 }
 
-void loop()
-{
+void loop() {
   double now = millis();
   dt = (now - last_time)/1000.00;
   last_time = now;
@@ -42,9 +43,9 @@ void loop()
   Serial.println(actual);
 
   // Error
-  //Serial.println(error);
+  Serial.println(error);
 
-  delay(300);
+  delay(500);
 }
 
 double pid(double error)
